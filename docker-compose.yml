@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+    client:
+        build: ./test_client
+
+    zendesk.api.mock:
+        image: "jamesdbloom/mockserver:mockserver-5.10.0"
+        ports:
+            - "1080:1080"
+        environment:
+            MOCKSERVER_PROPERTY_FILE: /config/mockserver.properties
+            MOCKSERVER_INITIALIZATION_JSON_PATH: /config/expectations.json
+            MOCKSERVER_PERSIST_EXPECTATIONS: "true"
+            MOCKSERVER_PERSISTED_EXPECTATIONS_PATH: /config/expectations.json
+            MOCKSERVER_INITIALIZATION_JSON_PATH: /config/expectations.json
+        volumes:
+            - type: "bind"
+              source: "./mock_zendesk_config"
+              target: "/config"

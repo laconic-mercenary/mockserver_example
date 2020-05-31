@@ -1,0 +1,147 @@
+[
+{
+    "httpRequest": {
+        "method" : "GET",
+        "path" : "/api/v2/tickets.json",
+        "headers" : {
+            "Accept" : [ "application/json" ],
+            "Authorization" : [ "Basic dGVzdEBleGFtcGxlLmNvLmpwL3Rva2VuOjZ3aUlCV2JHa0JNbzFtUkRNdVZ3a3cxRVBzTmtlVWo5NVBJejJha3Y=" ]
+        }
+    },
+    "httpResponse": {
+        "statusCode": 200,
+        "body": {
+            "type": "JSON",
+            "json": 
+            {
+                "tickets": [
+                    {
+                        "url": "https://test.zendesk.com/api/v2/tickets/11196.json",
+                        "id": 11196,
+                        "external_id": null,
+                        "via": {
+                            "channel": "web",
+                            "source": {
+                                "from": { },
+                                "to": { },
+                                "rel": null
+                            }
+                        },
+                        "created_at": "2019-12-16 08:10:49 UTC",
+                        "updated_at": "2020-03-01 09:01:56 UTC",
+                        "type": null,
+                        "subject": null,
+                        "raw_subject": null,
+                        "description": "テスト",
+                        "priority": null,
+                        "status": "closed",
+                        "recipient": null,
+                        "requester_id": 900009978583,
+                        "submitter_id": 900009978583,
+                        "assignee_id": 114967573834,
+                        "organization_id": null,
+                        "group_id": 114094975274,
+                        "collaborator_ids": [ ],
+                        "follower_ids": [ ],
+                        "email_cc_ids": [ ],
+                        "forum_topic_id": null,
+                        "problem_id": null,
+                        "has_incidents": false,
+                        "is_public": true,
+                        "due_at": null,
+                        "tags": [
+                            "準備中"
+                        ],
+                        "custom_fields": [
+                            {
+                                "id": 114101081754,
+                                "value": "準備中"
+                            },
+                            {
+                                "id": 114101457874,
+                                "value": "その他"
+                            }
+                        ],
+                        "satisfaction_rating": null,
+                        "sharing_agreement_ids": [],
+                        "fields": [
+                            {
+                                "id": 114101081754,
+                                "value": "準備中"
+                            },
+                            {
+                                "id": 114101457874,
+                                "value": "その他"
+                            }
+                        ],
+                        "followup_ids": [],
+                        "brand_id": 114094610594,
+                        "allow_channelback": false,
+                        "allow_attachments": true
+                    }
+                ]
+            },
+            "matchType": "STRICT"
+        },
+        "connectionOptions" : {
+            "closeSocket" : true,
+            "closeSocketDelay" : {
+                "timeUnit" : "MILLISECONDS",
+                "value" : 500
+            }
+        }
+    }
+},
+{
+    "httpRequest": {
+        "method" : "POST",
+        "path" : "/api/v2/tickets.json",
+        "headers" : {
+            "Accept" : [ "application/json" ],
+            "Authorization" : [ "Basic dGVzdEBleGFtcGxlLmNvLmpwL3Rva2VuOjZ3aUlCV2JHa0JNbzFtUkRNdVZ3a3cxRVBzTmtlVWo5NVBJejJha3Y=" ],
+            "Content-Type" : [ "application/json" ]
+        },
+        "body": {
+            "type": "JSON",
+            "json": {
+                "ticket": {
+                    "subject": "ticket-subject",
+                    "comment": {
+                        "body": "ticket-body"
+                    }
+                }
+            },
+            "matchType": "STRICT"
+        }
+    },
+    "httpResponse": {
+        "statusCode": 201,
+        "headers" : {
+            "X-Rate-Limit" : [ "700" ],
+            "X-Rate-Limit-Remaining" : [ "699" ],
+            "Location" : [ "https://test.zendesk.com/api/v2/tickets/11196.json" ]
+        },
+        "body": {
+            "type": "JSON",
+            "json": {
+                "ticket": {
+                    "id": 11196,
+                    "url": "https://test.zendesk.com/api/v2/tickets/11196.json",
+                    "subject": "My printer is on fire!",
+                    "comment": {
+                        "Body": "The smoke is very colorful."
+                    }
+                }
+            },
+            "matchType": "STRICT"
+        },
+        "connectionOptions" : {
+            "closeSocket" : true,
+            "closeSocketDelay" : {
+                "timeUnit" : "MILLISECONDS",
+                "value" : 500
+            }
+        }
+    }
+}
+]
